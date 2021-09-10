@@ -2,13 +2,13 @@ specVersion: 0.0.2
 description: YieldToken humboi
 repository: https://github.com/graphprotocol/example-subgraph
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: YieldToken
     network: mainnet
     source:
-      address: '0xdF7a47b9f17e4A9a9A45460C241e1851906c5E8a'
+      address: "0xdF7a47b9f17e4A9a9A45460C241e1851906c5E8a"
       abi: YieldToken
     mapping:
       kind: ethereum/events
@@ -18,8 +18,8 @@ dataSources:
         - YieldToken
       abis:
         - name: YieldToken
-          file: ../src/sol/build/contracts/YieldToken.json
+          file: src/sol/build/contracts/YieldToken.json
       eventHandlers:
         - event: Created(bytes32,string,uint256,uint256,uint256,uint256,uint256,uint256,uint256)
           handler: handleCreated
-      file: ./src/mapping.ts
+      file: YieldToken/YieldToken.wasm
